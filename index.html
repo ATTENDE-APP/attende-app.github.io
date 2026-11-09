@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>常頌 SEMPER ・ 獻禮 OBLATIO</title>
+<meta name="description" content="常頌 SEMPER（時辰頌禱）及獻禮 OBLATIO（彌撒、聖事禮典、祝福禮典）：免費、可離線使用的天主教禮儀應用程式，採用香港教區用語。">
+<meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151312" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="常頌 SEMPER ・ 獻禮 OBLATIO">
+<meta property="og:description" content="時辰頌禱、彌撒、祝福禮典 — 免費、可離線使用，採用香港教區用語。">
+<meta property="og:image" content="icons/semper.png">
+<link rel="icon" href="icons/semper.png">
+<link rel="apple-touch-icon" href="icons/semper.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f3ec; --paper: #fffdf9; --ink: #2a2420; --muted: #776c62; --line: #e4dccf;
+  --semper: #7a1c1c; --semper-soft: #f6ebe8;
+  --oblatio: #1f3a68; --oblatio-soft: #e9eef6;
+  --gold: #b88a2e;
+  --font: "Noto Serif TC", "Songti TC", "PMingLiU", "Noto Serif CJK TC", serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151312; --paper: #1d1a18; --ink: #ebe4da; --muted: #9c9187; --line: #353029;
+    --semper: #d9786b; --semper-soft: #2a1d1b;
+    --oblatio: #8fb0e6; --oblatio-soft: #1b2230;
+    --gold: #d9b45e;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.75; font-size: 17px; }
+a { color: inherit; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+/* hero */
+header.hero { text-align: center; padding: calc(56px + env(safe-area-inset-top)) 0 36px; }
+.hero .icons { display: flex; justify-content: center; gap: 14px; margin-bottom: 22px; }
+.hero .icons img { width: 64px; height: 64px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,.12); }
+.hero h1 { font-size: clamp(28px, 6vw, 42px); font-weight: 700; margin: 0; letter-spacing: .12em; line-height: 1.4; }
+.hero h1 .sep { color: var(--gold); margin: 0 .25em; font-weight: 400; }
+.hero h1 .lat { display: block; font-size: .42em; letter-spacing: .32em; color: var(--muted); font-weight: 600; margin-top: .3em; }
+.hero p.lead { color: var(--muted); margin: 18px auto 0; max-width: 34em; font-size: 16px; }
+.tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 18px; }
+.tags span { font-size: 14px; border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 2px 14px; }
+
+/* app cards */
+.apps { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding-bottom: 28px; }
+@media (max-width: 760px) { .apps { grid-template-columns: 1fr; } }
+.card { --c: var(--semper); --soft: var(--semper-soft); background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--c); border-radius: 16px; padding: 26px 24px 24px; display: flex; flex-direction: column; }
+.card.oblatio { --c: var(--oblatio); --soft: var(--oblatio-soft); }
+.card .head { display: flex; align-items: center; gap: 16px; }
+.card .head a { flex: none; line-height: 0; }
+.card .head img { width: 72px; height: 72px; border-radius: 16px; flex: none; }
+.card h2 { margin: 0; font-size: 26px; line-height: 1.3; letter-spacing: .08em; color: var(--c); }
+.card h2 small { font-size: 13px; letter-spacing: .28em; color: var(--muted); font-weight: 600; margin-left: .5em; }
+.card .sub { margin: 2px 0 0; font-size: 15px; color: var(--muted); }
+.badge { display: inline-block; font-size: 12px; letter-spacing: .1em; color: var(--c); border: 1px solid var(--c); border-radius: 999px; padding: 0 9px; margin-left: 6px; vertical-align: 3px; font-weight: 600; }
+blockquote { margin: 20px 0 6px; padding: 14px 18px; background: var(--soft); border-radius: 10px; font-size: 16px; line-height: 1.85; }
+blockquote cite { display: block; font-style: normal; font-size: 13px; color: var(--muted); margin-top: 4px; }
+.name-note { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+.card ul { list-style: none; padding: 0; margin: 4px 0 22px; font-size: 15.5px; }
+.card li { position: relative; padding-left: 1.3em; margin: .45em 0; }
+.card li::before { content: ""; position: absolute; left: .15em; top: .78em; width: 6px; height: 6px; border-radius: 50%; background: var(--c); opacity: .75; }
+.card li b { font-weight: 600; }
+.card li .soon { color: var(--muted); }
+.btn { margin-top: auto; display: block; text-align: center; text-decoration: none; background: var(--c); color: #fff; border-radius: 12px; padding: 12px 18px; font-size: 17px; font-weight: 600; letter-spacing: .1em; }
+@media (prefers-color-scheme: dark) { .btn { color: #151312; } }
+.btn:hover { filter: brightness(1.08); }
+.btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.btn.disabled { background: transparent; color: var(--muted); border: 1px dashed var(--line); cursor: default; filter: none; }
+
+/* install */
+section.install { padding: 18px 0 8px; }
+section.install h2 { text-align: center; font-size: 22px; letter-spacing: .12em; margin: 0 0 6px; }
+section.install > .wrap > p { text-align: center; color: var(--muted); margin: 0 auto 22px; max-width: 32em; font-size: 15.5px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+.step { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+.step h3 { margin: 0 0 6px; font-size: 16px; color: var(--gold); letter-spacing: .08em; }
+.step p { margin: 0; font-size: 15px; }
+.step .k { display: inline-block; border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; font-size: 13.5px; background: var(--bg); white-space: nowrap; }
+
+footer { margin-top: 44px; border-top: 1px solid var(--line); padding: 22px 0 calc(28px + env(safe-area-inset-bottom)); color: var(--muted); font-size: 13.5px; text-align: center; }
+footer p { margin: .3em 0; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="icons">
+      <a href="https://oblatio-app.github.io/SEMPER/"><img src="icons/semper.png" alt="常頌"></a>
+      <a href="https://oblatio-app.github.io/OBLATIO/"><img src="icons/oblatio.png" alt="獻禮"></a>
+    </div>
+    <h1>常頌<span class="sep">・</span>獻禮<span class="lat">SEMPER ・ OBLATIO</span></h1>
+    <p class="lead">兩個天主教禮儀應用程式：常頌用於時辰頌禱，獻禮用於彌撒及其他禮典。經文按香港教區用語統一，稱呼天主用「祢」「祂」。</p>
+    <div class="tags"><span>免費</span><span>無需註冊</span><span>可離線使用</span><span>繁體／简体</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="apps">
+
+    <article class="card semper">
+      <div class="head">
+        <a href="https://oblatio-app.github.io/SEMPER/"><img src="icons/semper.png" alt="開啟常頌"></a>
+        <div>
+          <h2>常頌<small>SEMPER</small></h2>
+          <p class="sub">時辰頌禱</p>
+        </div>
+      </div>
+      <blockquote>「我要時時讚美上主，<br>我的口舌不斷讚頌上主。」<cite>聖詠 34:2</cite></blockquote>
+      <p class="name-note">SEMPER 是拉丁文，意即「常常」，出自這節聖詠。</p>
+      <ul>
+        <li><b>每日全部時辰：</b>序經、誦讀日課、晨禱、日間祈禱、晚禱、夜禱</li>
+        <li><b>禮儀日曆：</b>通用、香港、澳門、台灣，包括自由紀念及星期六紀念聖母</li>
+        <li>經文取自香港教區禮儀委員會《每日日課》</li>
+        <li>朗讀功能，可選擇由哪一部份開始</li>
+        <li>明體、黑體、楷體；日間、米黃、夜間外觀</li>
+      </ul>
+      <a class="btn" href="https://oblatio-app.github.io/SEMPER/">開啟常頌</a>
+    </article>
+
+    <article class="card oblatio">
+      <div class="head">
+        <a href="https://oblatio-app.github.io/OBLATIO/"><img src="icons/oblatio.png" alt="開啟獻禮"></a>
+        <div>
+          <h2>獻禮<small>OBLATIO</small></h2>
+          <p class="sub">彌撒・聖事禮典・祝福禮典</p>
+        </div>
+      </div>
+      <blockquote>「從日出到日落，我的名在異民中大受顯揚，到處有人為我的名焚香獻祭，並奉獻潔淨的祭品。」<cite>瑪拉基亞先知書 1:11</cite></blockquote>
+      <p class="name-note">OBLATIO 是拉丁文，意即「獻禮」，出自這節經文：<i>oblatio munda</i>（潔淨的祭品）。</p>
+      <ul>
+        <li><b>彌撒：</b>主禮選定各部份經文（感恩經、頌謝詞、降福等），由致候至遣散顯示為一篇連貫的經文</li>
+        <li>主日及平日彌撒，取自香港教區禮儀委員會；另有為各種需要、敬禮、追思及通用彌撒</li>
+        <li><b>祝福禮典</b></li>
+        <li><b>聖事禮典</b> <span class="soon">（籌備中）</span></li>
+        <li>供主禮司鐸使用</li>
+      </ul>
+      <a class="btn" href="https://oblatio-app.github.io/OBLATIO/">開啟獻禮</a>
+    </article>
+
+  </div>
+</main>
+
+<section class="install">
+  <div class="wrap">
+    <h2>加至主畫面</h2>
+    <p>兩個程式都在瀏覽器中開啟，毋須經應用程式商店。加至主畫面後，用法與一般應用程式相同；首次開啟後，經文儲存在裝置上，沒有網絡亦可使用。</p>
+    <div class="steps">
+      <div class="step">
+        <h3>iPhone／iPad</h3>
+        <p>用 Safari 開啟，按 <span class="k">分享</span>，再選 <span class="k">加入主畫面</span>。</p>
+      </div>
+      <div class="step">
+        <h3>Android</h3>
+        <p>用 Chrome 開啟，按右上角 <span class="k">⋮</span>，再選 <span class="k">安裝應用程式</span> 或 <span class="k">加到主畫面</span>。</p>
+      </div>
+      <div class="step">
+        <h3>電腦</h3>
+        <p>用 Chrome 或 Edge 開啟，按網址列右邊的 <span class="k">安裝</span> 圖示。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>聖經經文版權屬思高聖經學會所有（《思高聖經》）。</p>
+    <p>僅供私人及團體祈禱之用。</p>
+  </div>
+</footer>
+
+</body>
+</html>
