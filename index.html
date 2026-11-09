@@ -63,7 +63,7 @@ header.hero { text-align: center; padding: calc(56px + env(safe-area-inset-top))
 .badge { display: inline-block; font-size: 12px; letter-spacing: .1em; color: var(--c); border: 1px solid var(--c); border-radius: 999px; padding: 0 9px; margin-left: 6px; vertical-align: 3px; font-weight: 600; }
 blockquote { margin: 20px 0 6px; padding: 14px 18px; background: var(--soft); border-radius: 10px; font-size: 16px; line-height: 1.85; }
 blockquote cite { display: block; font-style: normal; font-size: 13px; color: var(--muted); margin-top: 4px; }
-.name-note { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+.name-note { font-size: 13px; color: var(--muted); margin: 0 0 22px; }
 .card ul { list-style: none; padding: 0; margin: 4px 0 22px; font-size: 15.5px; }
 .card li { position: relative; padding-left: 1.3em; margin: .45em 0; }
 .card li::before { content: ""; position: absolute; left: .15em; top: .78em; width: 6px; height: 6px; border-radius: 50%; background: var(--c); opacity: .75; }
@@ -76,7 +76,7 @@ blockquote cite { display: block; font-style: normal; font-size: 13px; color: va
 .btn.disabled { background: transparent; color: var(--muted); border: 1px dashed var(--line); cursor: default; filter: none; }
 
 /* install */
-section.install { padding: 18px 0 8px; }
+section.install { padding: 18px 0 calc(48px + env(safe-area-inset-bottom)); }
 section.install h2 { text-align: center; font-size: 22px; letter-spacing: .12em; margin: 0 0 6px; }
 section.install > .wrap > p { text-align: center; color: var(--muted); margin: 0 auto 22px; max-width: 32em; font-size: 15.5px; }
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -117,13 +117,6 @@ footer p { margin: .3em 0; }
       </div>
       <blockquote>「我要時時讚美上主，<br>我的口舌不斷讚頌上主。」<cite>聖詠 34:2</cite></blockquote>
       <p class="name-note">SEMPER 是拉丁文，意即「常常」，出自這節聖詠。</p>
-      <ul>
-        <li><b>每日全部時辰：</b>序經、誦讀日課、晨禱、日間祈禱、晚禱、夜禱</li>
-        <li><b>禮儀日曆：</b>通用、香港、澳門、台灣，包括自由紀念及星期六紀念聖母</li>
-        <li>經文取自香港教區禮儀委員會《每日日課》</li>
-        <li>朗讀功能，可選擇由哪一部份開始</li>
-        <li>明體、黑體、楷體；日間、米黃、夜間外觀</li>
-      </ul>
       <a class="btn" href="https://oblatio-app.github.io/SEMPER/">開啟常頌</a>
     </article>
 
@@ -137,13 +130,6 @@ footer p { margin: .3em 0; }
       </div>
       <blockquote>「從日出到日落，我的名在異民中大受顯揚，到處有人為我的名焚香獻祭，並奉獻潔淨的祭品。」<cite>瑪拉基亞先知書 1:11</cite></blockquote>
       <p class="name-note">OBLATIO 是拉丁文，意即「獻禮」，出自這節經文：<i>oblatio munda</i>（潔淨的祭品）。</p>
-      <ul>
-        <li><b>彌撒：</b>主禮選定各部份經文（感恩經、頌謝詞、降福等），由致候至遣散顯示為一篇連貫的經文</li>
-        <li>主日及平日彌撒，取自香港教區禮儀委員會；另有為各種需要、敬禮、追思及通用彌撒</li>
-        <li><b>祝福禮典</b></li>
-        <li><b>聖事禮典</b> <span class="soon">（籌備中）</span></li>
-        <li>供主禮司鐸使用</li>
-      </ul>
       <a class="btn" href="https://oblatio-app.github.io/OBLATIO/">開啟獻禮</a>
     </article>
 
@@ -171,12 +157,6 @@ footer p { margin: .3em 0; }
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <p>聖經經文版權屬思高聖經學會所有（《思高聖經》）。</p>
-    <p>僅供私人及團體祈禱之用。</p>
-  </div>
-</footer>
 
 </body>
 </html>
